@@ -20,3 +20,12 @@ unique_code: Generate using SecureRandom. Make it url safe.
 Why specific mention of created_at? And no mention of updated_at?
 
 Create factories and finish model specs.
+
+3. Generate seed data. It does not make sense to have random seed data. Use factories to generate and copy to seeds.rb.
+
+4. Create scopes and check seeded data.
+- 13 successful
+- 3 disputed
+- 5 failed
+
+
