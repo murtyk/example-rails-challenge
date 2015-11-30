@@ -28,4 +28,10 @@ Create factories and finish model specs.
 - 3 disputed
 - 5 failed
 
+5. Index page
+  - create layout. copy from wtracker.
+  - define css for row colors
+  - route, controller and view
+  - create feature spec
 
+6. Index - show link (unique_code instead of id)

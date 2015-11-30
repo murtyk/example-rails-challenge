@@ -10,6 +10,14 @@ class Charge < ActiveRecord::Base
 
   before_create :generate_unique_code
 
+  def client_name
+    chargable.try(:to_label)
+  end
+
+  def date
+    created_at.strftime('%m/%d/%Y')
+  end
+
   private
 
   def generate_unique_code

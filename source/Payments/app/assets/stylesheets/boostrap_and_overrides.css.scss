@@ -22,3 +22,14 @@ body { padding-top: 90px; }
     background-image:none;
     border:0 !important;
 }
+
+.table tbody tr.failed-row > td{
+  background-color: #FF0000;
+  color: white;
+}
+
+.table tbody tr.disputed-row > td{
+  background-color: #FF5400;
+  color: white;
+}
+

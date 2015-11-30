@@ -1,0 +1,39 @@
+<div id='failed_charges_div'>
+  <h1>Failed Charges</h1>
+  <table class="table table-condensed table-bordered table-hover">
+    <% @failed_charges.each do |charge| %>
+
+    <tr class='failed-row'>
+      <td><%= charge.client_name %></td>
+      <td><%= charge.amount %></td>
+      <td><%= charge.date %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id='disputed_charges_div'>
+  <h1>Disputed Charges</h1>
+  <table class="table table-condensed table-bordered table-hover">
+    <% @disputed_charges.each do |charge| %>
+    <tr class='disputed-row'>
+      <td><%= charge.client_name %></td>
+      <td><%= charge.amount %></td>
+      <td><%= charge.date %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id='successful_charges_div'>
+  <h1>Successful Charges</h1>
+  <table class="table table-condensed table-bordered table-hover">
+    <% @successful_charges.each do |charge| %>
+    <tr class='successful-row'>
+      <td><%= charge.client_name %></td>
+      <td><%= charge.amount %></td>
+      <td><%= charge.date %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

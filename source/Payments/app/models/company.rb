@@ -3,4 +3,8 @@ class Company < ActiveRecord::Base
 
   validates_presence_of :name
   validates_presence_of :zip_code
+
+  def to_label
+    "#{name} #{zip_code}"
+  end
 end

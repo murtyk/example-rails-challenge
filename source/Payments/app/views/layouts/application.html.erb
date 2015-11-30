@@ -2,13 +2,24 @@
 <html>
 <head>
   <title>Payments</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/menubar' %>
+  <div class = 'container' style = "min-height:500px;">
+    <div id="flash_notice">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-<%= name.to_s == 'notice' ? 'success' : name %>" style = 'margin-bottom: 5px'>
+            <a class="close" data-dismiss="alert">&#215;</a>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>
