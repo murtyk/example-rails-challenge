@@ -36,4 +36,5 @@ Create factories and finish model specs.
 
 6. Index - show link (unique_code instead of id)
 
-7.
+7. New Charge page
+  - select only one of user or company

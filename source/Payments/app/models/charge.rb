@@ -1,4 +1,7 @@
 class Charge < ActiveRecord::Base
+  # for form input
+  attr_accessor :user_id, :company_id
+
   belongs_to :chargable, polymorphic: true
 
   scope :successful, -> { where(paid: true, refunded: false) }

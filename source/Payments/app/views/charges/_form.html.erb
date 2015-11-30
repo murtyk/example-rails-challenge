@@ -1,0 +1,35 @@
+<%= form_for(@charge, html: { class: 'form-horizontal' }) do |f| %>
+  <% if @charge.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@charge.errors.count, "error") %> prohibited this charge from being saved:</h4>
+      <ul>
+      <% @charge.errors.full_messages.each do |message| %>
+        <li class='error-message'><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :amount, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :amount, type: "number", min: "1", step: "any" %>
+    </div>
+  </div>
+  <h3>Who is paying?</h3>
+  <div class="control-group">
+    <%= f.label :user_id, label: 'User', class: 'control-label' %>
+    <%= f.collection_select(:user_id,
+                            User.order(:first_name, :last_name).all, :id, :to_label,
+                            include_blank: true) %>
+
+    <span style= 'margin-left: 30px; margin-right: 30px'>OR</span>
+
+    Company
+    <%= f.collection_select(:company_id,
+                            Company.order(:name).all, :id, :to_label,
+                            include_blank: true) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
