@@ -4,4 +4,8 @@ class ChargesController < ApplicationController
     @failed_charges     = Charge.failed.includes(:chargable)
     @disputed_charges   = Charge.disputed.includes(:chargable)
   end
+
+  def show
+    @charge = Charge.find_by(unique_code: params[:unique_code])
+  end
 end

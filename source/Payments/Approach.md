@@ -35,3 +35,5 @@ Create factories and finish model specs.
   - create feature spec
 
 6. Index - show link (unique_code instead of id)
+
+7.

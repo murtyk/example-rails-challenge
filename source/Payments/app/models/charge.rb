@@ -10,12 +10,34 @@ class Charge < ActiveRecord::Base
 
   before_create :generate_unique_code
 
+  def to_param
+    unique_code
+  end
+
   def client_name
     chargable.try(:to_label)
   end
 
   def date
     created_at.strftime('%m/%d/%Y')
+  end
+
+  def status
+    return :SUCCESSFUL if successful?
+    return :DISPUTED if disputed?
+    :FAILED
+  end
+
+  def successful?
+    paid && !refunded
+  end
+
+  def disputed?
+    paid && refunded
+  end
+
+  def failed?
+    !paid
   end
 
   private
