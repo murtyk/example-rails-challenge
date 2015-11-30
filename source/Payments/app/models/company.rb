@@ -7,4 +7,17 @@ class Company < ActiveRecord::Base
   def to_label
     "#{name} #{zip_code}"
   end
+
+  # we need to refactor these. user has same methods.
+  def failed_charges
+    charges.where(paid: false)
+  end
+
+  def disputed_charges
+    charges.where(paid: true, refunded: true)
+  end
+
+  def successful_charges
+    charges.where(paid: true, refunded: false)
+  end
 end

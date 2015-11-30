@@ -38,3 +38,7 @@ Create factories and finish model specs.
 
 7. New Charge page
   - select only one of user or company
+
+8. Search Page
+  - use Jquery's autocomplete to list matching clients(users and companies).
+  - 'client name   client_type:client_id'

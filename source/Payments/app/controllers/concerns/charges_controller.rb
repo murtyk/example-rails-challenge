@@ -1,4 +1,16 @@
 class ChargesController < ApplicationController
+  def client_names
+    clients = ChargeServices.search_clients(params[:term])
+    render(json: clients, status: :ok)
+  end
+
+  def search
+    return unless params[:client_type]
+
+    @charges = ChargeServices.search(params[:client_type], params[:client_id])
+    render(json: @charges, status: :ok)
+  end
+
   def index
     @successful_charges = Charge.successful.includes(:chargable)
     @failed_charges     = Charge.failed.includes(:chargable)

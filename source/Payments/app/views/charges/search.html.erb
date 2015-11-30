@@ -1,0 +1,25 @@
+<div class='row-fluid'>
+  <div class='span7'>
+    <div id='failed_charges_div'>
+      <h3>Failed Charges</h3>
+      <table id='table-failed-charges' class="table table-condensed table-bordered">
+      </table>
+    </div>
+    <div id='disputed_charges_div'>
+      <h3>Disputed Charges</h3>
+      <table id='table-disputed-charges' class="table table-condensed table-bordered">
+      </table>
+    </div>
+    <div id='successful_charges_div'>
+      <h3>Successful Charges</h3>
+      <table id='table-successful-charges' class="table table-condensed table-bordered">
+      </table>
+    </div>
+  </div>
+  <div class='span5'>
+    <form class="form-search pull-right">
+      <input autocomplete="off" type="text" class="input-medium search-query ui-autocomplete-input" data-autocomplete-source="/charges/client_names" id="charge_client_name">
+      <button id="button_search_charges" type="submit" class="btn btn-flat btn-primary">Search</button>
+    </form>
+  </div>
+</div>
