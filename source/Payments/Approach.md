@@ -9,6 +9,14 @@
 
 2. Generate Models. Since a charge can belong to an User or a Company, use STI polymorphism.
 
-- Charge (chargable_id, chargable_type)
+- Charge: additional attributes - chargable_id and chargable_type.
 - User
 - Company
+
+How do we handle money? Use money-rails like in learntobe? Pg money?
+
+unique_code: Generate using SecureRandom. Make it url safe.
+
+Why specific mention of created_at? And no mention of updated_at?
+
+Create factories and finish model specs.
